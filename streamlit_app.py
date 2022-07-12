@@ -13,6 +13,10 @@ import pandas
 myfruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 myfruit_list = myfruit_list.set_index('Fruit')
 
+
+#Let's Put a pickUp list for the customers then they can pick up the Fruit want to include
+
+streamlit.multiselect("pickup Some Fruits:",list(myfruit_list.index))
 #Display the table on the page(table format)
 streamlit.dataframe(myfruit_list)
 
